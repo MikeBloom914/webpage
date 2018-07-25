@@ -1,0 +1,10 @@
+{% extends "homepage.html" %}
+{% block main %}
+		<h5> Here is your current P and L </h5>
+		<form action ="/pl" method = "get">
+		</form>
+		<p>{{ message }}</p>
+		<ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+        <a class="nav-link" href="/homepage">Back to Home</a>
+{% endblock main %}

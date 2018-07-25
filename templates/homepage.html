@@ -1,0 +1,211 @@
+
+<!doctype html>
+<html lang="en">
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <!-- <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"> -->
+    <!-- <span class="blue-text"> -->
+    <!-- Quotes</span> by TradingView</a></div> -->
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+  {
+  "symbols": [
+    {
+      "description": "Dow Jones",
+      "proName": "DJ:DJI"
+    },
+    {
+      "description": "S&P 500",
+      "proName": "INDEX:SPX\t"
+    },
+    {
+      "description": "NASDAQ 100",
+      "proName": "INDEX:IUXX"
+    },
+    {
+      "description": "BTC/USD",
+      "proName": "BITFINEX:BTCUSD"
+    },
+    {
+      "description": "ETH/USD",
+      "proName": "BITFINEX:ETHUSD"
+    }
+  ],
+  "locale": "en",
+  "linkPageTemplate": "file:/Users/bloom/Desktop/Anacottsteel/templates/homepage.html"
+}
+
+  </script>
+
+</div>
+
+<!-- TradingView Widget END -->
+  <head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Bloom">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Homepage</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/doc/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.1/examples/dashboard/dashboard.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <!-- <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-1 mr-0" href="/homepage">Trading Simulator</a> -->
+      <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+
+      <ul class="navbar-nav px-8">
+
+
+      </ul>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <br></br>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="/homepage">
+                  <span data-feather="home"></span>
+                  Home <span class="sr-only"></span>
+                 <br></br>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/lookup">
+                  <span data-feather="file"></span>
+                  Company Name to get symbol for
+                </a>
+                   <br></br>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/quote">
+                  <span data-feather="file"></span>
+                  Enter Symbol to Get a Quote
+                </a>
+                 <br></br>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/buy">
+                  <span data-feather="shopping-cart"></span>
+                  Buy
+                </a>
+                <br></br>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/sell">
+                  <span data-feather="bar-chart-2"></span>
+                  Sell
+                </a>
+                    <br></br>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/portfolio">
+                  <span data-feather="layers"></span>
+                  Portfolio Balance
+                </a>
+                 <br></br>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pl">
+                  <span data-feather="bar-chart-2"></span>
+                  P/L
+                </a>
+                 <br></br>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">
+                  <br></br>
+                  <span data-feather="bar-chart-2"></span>
+                  SIGN OUT
+                </a>
+                <br></br>
+              </li>
+            </ul>
+
+            <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Saved reports</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Current month
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Last quarter
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Social engagement
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Year-end sale
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav> -->
+        {% block main %}
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Welcome</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+<!--               <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div> -->
+          </div>
+        {% endblock main %}
+        <p class="mt-5 mb-3 text-muted">&copy; <a href="https://www.bloomsedge.com">BloomsEdge.com</p>
+          <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+           <!--  <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+              <div class="col-lg-6">
+                <img class="img-fluid" src="/me.jpg" alt="">
+            </div>
+           --></div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+  </body>
+</html>

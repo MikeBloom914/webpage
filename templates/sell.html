@@ -1,0 +1,15 @@
+{% extends "homepage.html" %}
+{% block main %}
+
+		<h5> Please enter stock symbol and amount of shares you would like to sell and hit submit </h5>
+		<form action = "/sell" method = "post">
+			<input name = "sellone" placeholder = "Ticker Symbol" type="text">
+			<input name = "selltwo" placeholder = "Trade Volume" type="text">
+			<input type = "submit">
+		</form>
+		<p>{{ message }}</p>
+		<ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+        <a class="nav-link" href="/homepage">Back to Home</a>
+
+{% endblock main %}
