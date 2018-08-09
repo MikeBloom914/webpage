@@ -1,5 +1,5 @@
 #!usr/bin/env python3
-import creds
+#import creds
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -10,6 +10,7 @@ from flask import Flask, redirect, render_template, request, session, url_for
 import model
 import os
 import pandas as pd
+pd.core.common.is_list_like = pd.api.types.is_list_like
 from pandas_datareader.data import DataReader
 import time
 import plotly
@@ -26,7 +27,7 @@ app.config['SECRET_KEY'] = 'secret'
 
 app_dash.scripts.config.serve_locally = False
 
-plotly.tools.set_credentials_file(username=creds.username, api_key=creds.api_key)
+plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
 
 colorscale = cl.scales['9']['qual']['Paired']
 
