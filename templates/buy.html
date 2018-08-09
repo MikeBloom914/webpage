@@ -1,6 +1,7 @@
 {% extends "homepage.html" %}
-{% block main %}
 
+
+{% block main %}
 		<h5> Please enter ticker symbol and amount of shares you would like to buy and hit submit </h5>
 		<form action ="/buy" method = "post">
 			<input name = "thingone" placeholder = "Ticker Symbol" type="text">
@@ -10,6 +11,5 @@
 		<p>{{ message }}</p>
 		<ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-        <a class="nav-link" href="/homepage">Back to Home</a>
-
+        <a class="nav-link" href="/homepage">Back to Dashboard</a>
 {% endblock main %}

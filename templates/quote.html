@@ -2,12 +2,12 @@
 {% block main %}
 
 		<h5> Please enter the ticker symbol you want a price of and hit submit </h5>
-		<form action = "/quote" method = "post"> 
+		<form action = "/quote" method = "post">
 			<input name = "copsymb" placeholder = "Ticker Symbol" type="text">
 			<input type = "submit">
-		</form>	
+		</form>
 		<p>{{ message }}</p>
 		<ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-        <a class="nav-link" href="/homepage">Back to Home</a>
+        <a class="nav-link" href="/homepage">Back to Dashboard</a>
 {% endblock main %}

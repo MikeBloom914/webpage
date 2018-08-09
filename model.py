@@ -11,11 +11,7 @@ def registration(firstname, lastname, email, password, balance):
     connection = sqlite3.connect('master.db', check_same_thread=False)
     cursor = connection.cursor()
     print(firstname, lastname, email, password, balance)
-    # cursor.execute('SELECT firstname, lastname, email, password, balance FROM users WHERE pk=?;', (guid,))
-    # email ='{email}';""".format(email=email))
-    # exists = cursor.fetchall()
 
-    # if exists is None:
     if True:
         cursor.execute("""INSERT INTO users(
                             firstname,
@@ -35,7 +31,7 @@ def registration(firstname, lastname, email, password, balance):
         return 'You have successfully registered'
 
     else:
-        return 'This email is already being used, Please choose another one or go back to login screen'
+        return 'This email has already registered or is already being used, Please choose another one or go back to login screen'
 
 
 def buy(ticker_symbol, trade_volume, guid):
@@ -166,15 +162,11 @@ def sell(ticker_symbol, trade_volume, guid):
         return 'Trade is complete. You sold {trade_volume} shares of {ticker_symbol} at {last_price}'.format(trade_volume=trade_volume, ticker_symbol=ticker_symbol.upper(), last_price=last_price)
 
 
-
-
 def lookup(company_name):
     deep_link = 'http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input={company_name}'.format(company_name=company_name)
     response = json.loads(requests.get(deep_link).text)
     ticker_symbol = response[0]['Symbol']
     return 'The ticker symbol for {company_name} is: '.format(company_name=company_name) + ticker_symbol
-
-
 
 
 def quote(ticker_symbol):
@@ -183,8 +175,6 @@ def quote(ticker_symbol):
     last_price = response['LastPrice']
 
     return 'The last trade price for {ticker_symbol} is {last_price}'.format(ticker_symbol=ticker_symbol.upper(), last_price=last_price)
-
-
 
 
 def portfolio(guid):
@@ -197,12 +187,14 @@ def portfolio(guid):
     cursor.execute('SELECT ticker_symbol,number_of_shares,vwap FROM positions WHERE pk=?;', (guid,))
     trades = cursor.fetchall()
 
-    return 'Your current balance is ${balance} and your current positions are: {trades}'.format(balance=round(balance, 2), trades=trades)
+    if trades == []:
+        return 'You have no positions on.'
+    else:
+        # return 'Your current balance is ${balance} and your current positions are: {trades}'.format(balance=round(balance, 2), trades=trades)
+        return 'Your current balance is ${balance}.'.format(balance=round(balance, 2))
 
     cursor.close()
     connection.close()
-
-
 
 
 def pl(guid):
@@ -231,7 +223,7 @@ def pl(guid):
         return 'Your p/l is flat'
     # sshar = cursor.fetchall()[0][0]
         # print(sshar)
-        print(svwap, sshar)
+        # print(svwap, sshar)
 
     cursor.execute('SELECT balance FROM users WHERE pk=?;', (guid,))
     balance = cursor.fetchall()[0][0]
@@ -242,11 +234,17 @@ def pl(guid):
     pl2 = start - balance
     finpl = pl1 - pl2
 
-    # if isinstance(pl1, float):
-    #     return round(finpl, 2)
+    # print('svwap', svwap)
+    # print('sshar', sshar)
+    # print('pl1', pl1)
+    # print('pl2', pl2)
+    # print('finpl', finpl)
 
-    # else:
-    #     return 'Your p/l is flat'
+    if isinstance(pl1, float):
+        return round(finpl, 2)
+
+    else:
+        return 'Your p/l is flat'
 
     # if float(finpl) == float(0) or finpl == 0:
     #     return 'Your p/l is flat'
@@ -256,11 +254,10 @@ def pl(guid):
     # cursor.execute('SELECT count(*) FROM transactions;')
     # trans = cursor.fetchall()[0][0]
 
-    cursor.close()
-    connection.close()
-
     # cursor.execute('SELECT SUM(last_price) FROM transactions WHERE transaction_type = 0;')
     # prbuy = cursor.fetchall()[0][0]
 
     # cursor.execute('SELECT SUM(last_price) FROM transactions WHERE transaction_type = 1;')
     # prsell = cursor.fetchall()[0][0]
+    cursor.close()
+    connection.close()

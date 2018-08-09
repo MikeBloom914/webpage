@@ -1,0 +1,16 @@
+{% extends "homepage.html" %}
+{% block main %}
+		<h5> Every player starts out with a balance of $100,000. </h5>
+        <br></br>
+        <h5> Enter in the company name or symbol you want to see. </h5>
+        <h5> If you want to trade, simply click Buy or Sell. </h5>
+        <h5> Enter in the ticker symbol and quantity of shares you wish to trade. </h5>
+        <br></br>
+        <p> *There is a brokerage fee of $12.00 per transaction.</p>
+<!--         <h5> Here is your current P and L </h5>
+        <h5> Here is your current P and L </h5>
+        <h5> Here is your current P and L </h5> -->
+		<form action ="/rules" method ="get">
+		</form>
+        <a class="nav-link" href="/homepage">Back to Dashboard</a>
+{% endblock main %}
