@@ -177,24 +177,41 @@ def quote(ticker_symbol):
     return 'The last trade price for {ticker_symbol} is {last_price}'.format(ticker_symbol=ticker_symbol.upper(), last_price=last_price)
 
 
-def portfolio(guid):
+def balance(guid):
     connection = sqlite3.connect('master.db', check_same_thread=False)
     cursor = connection.cursor()
 
     cursor.execute('SELECT balance FROM users WHERE pk=?;', (guid,))
     balance = cursor.fetchall()[0][0]
 
-    cursor.execute('SELECT ticker_symbol,number_of_shares,vwap FROM positions WHERE pk=?;', (guid,))
-    trades = cursor.fetchall()
-
-    if trades == []:
-        return 'You have no positions on.'
-    else:
-        # return 'Your current balance is ${balance} and your current positions are: {trades}'.format(balance=round(balance, 2), trades=trades)
-        return 'Your current balance is ${balance}.'.format(balance=round(balance, 2))
+    return 'Your current balance is ${balance}.'.format(balance=round(balance, 2))
 
     cursor.close()
     connection.close()
+
+########
+#####################
+
+def positions(guid):
+    connection = sqlite3.connect('master.db', check_same_thread=False)
+    cursor = connection.cursor()
+
+
+    cursor.execute('SELECT ticker_symbol,number_of_shares,vwap FROM positions WHERE pk=?;', (guid,))
+    positions = cursor.fetchall()
+    print (positions)
+
+    if positions == []:
+        return 'You have no positions on.'
+    else:
+        # return 'Your current balance is ${balance} and your current positions are: {trades}'.format(balance=round(balance, 2), trades=trades)
+        return 'Your open position are : {positions}.'.format(positions=positions)
+
+
+    cursor.close()
+    connection.close()
+####################
+#########
 
 
 def pl(guid):
@@ -228,17 +245,9 @@ def pl(guid):
     cursor.execute('SELECT balance FROM users WHERE pk=?;', (guid,))
     balance = cursor.fetchall()[0][0]
 
-    #print(svwap, sshar)
-
     pl1 = (svwap * sshar)
     pl2 = start - balance
     finpl = pl1 - pl2
-
-    # print('svwap', svwap)
-    # print('sshar', sshar)
-    # print('pl1', pl1)
-    # print('pl2', pl2)
-    # print('finpl', finpl)
 
     if isinstance(pl1, float):
         return round(finpl, 2)
@@ -246,18 +255,5 @@ def pl(guid):
     else:
         return 'Your p/l is flat'
 
-    # if float(finpl) == float(0) or finpl == 0:
-    #     return 'Your p/l is flat'
-    # else:
-    #     return round(finpl, 2)
-
-    # cursor.execute('SELECT count(*) FROM transactions;')
-    # trans = cursor.fetchall()[0][0]
-
-    # cursor.execute('SELECT SUM(last_price) FROM transactions WHERE transaction_type = 0;')
-    # prbuy = cursor.fetchall()[0][0]
-
-    # cursor.execute('SELECT SUM(last_price) FROM transactions WHERE transaction_type = 1;')
-    # prsell = cursor.fetchall()[0][0]
     cursor.close()
     connection.close()

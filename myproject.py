@@ -311,10 +311,16 @@ def quote():
         return render_template('quote.html', message=x)
 
 
-@app.route('/portfolio', methods=['GET'])
-def portfolio():
-    x = model.portfolio(session['guid'])
-    return render_template('portfolio.html', message=x)
+@app.route('/balance', methods=['GET'])
+def balance():
+    x = model.balance(session['guid'])
+    return render_template('balance.html', message=x)
+
+
+@app.route('/positions', methods=['GET'])
+def positions():
+    x = model.positions(session['guid'])
+    return render_template('positions.html', message=x)
 
 
 @app.route('/pl', methods=['GET'])
