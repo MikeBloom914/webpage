@@ -1,46 +1,120 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Simulation Web Trader">
-    <meta name="author" content="Bloom">
-    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+<head>
+  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="https://colorlib.com/etc/lf/Login_v15/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v15/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v15/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v15/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v15/vendor/animate/animate.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v15/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v15/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v15/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v15/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v15/css/util.css">
+  <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/lf/Login_v15/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
 
-    <title>Login</title>
+  <div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+          <span class="login100-form-title-1">
+            Sign In to Web Trader
+          </span>
+        </div>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="https://getbootstrap.com/docs/4.1/examples/sign-in/signin.css" rel="stylesheet">
-  </head>
-
-  <body class="text-center">
-    <form action="/login" method="post" class="form-signin">
-      <img class="mb-4" src="/images/me.jpg" alt="" width="72" height="72">
-      <br></br>
-      <br></br>
-      <h1 class="h3 mb-3 font-weight-normal">Log in to Web Trader</h1>
-      <label for="email" class="sr-only">Email</label>
+        <form action="/login" method="post" class="form-signin">
+          <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+            <label for="email" class="sr-only">Email</label>
       <input name="email" type="text" id="email" class="form-control" placeholder="Email" required autofocus>
       <label for="password" class="sr-only">Password</label>
       <input name="password" type="password" id="password" class="form-control" placeholder="Password" required>
       <p>{{message}}</p>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <!-- <div class="checkbox mb-3"> -->
-        <label>
-        <li class="nav-item">
-          <p>For first time users:</p>
-        <a class="nav-link active" href="/registration">
-                  Click to Register <span class="sr-only"></span>
+            <!-- <span class="label-input100">Username</span>
+            <input class="input100" type="text" name="username" placeholder="Enter username">
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+            <span class="label-input100">Password</span>
+            <input class="input100" type="password" name="pass" placeholder="Enter password">
+            <span class="focus-input100"></span> -->
+          <!-- </div> -->
+
+          <!-- <div class="flex-sb-m w-full p-b-30"> -->
+            <!-- <div class="contact100-form-checkbox">
+              <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+              <label class="label-checkbox100" for="ckb1">
+                Remember me
+              </label>
+            </div> -->
+
+<!--             <div>
+              <a href="#" class="txt1">
+                Forgot Password?
+              </a>
+            </div>
+          </div> -->
+            <p>For first time users:</p>
+            <a class="nav-link active" href="/registration">
+            <h2>Click to Register</h2> <span class="sr-only"></span>
                 </a>
               </li>
-          <input type="checkbox" value="remember-me"> Remember me
+          <!-- <input type="checkbox" value="remember-me"> Remember me -->
 
         </label>
       </div>
-       <p class="mt-5 mb-3 text-muted">&copy; <a href="https://www.bloomsedge.com">BloomsEdge.com</p>
-    </form>
-  </body>
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn">
+              Login
+            </button>
+          </div>
+        </form>
+        <p class="mt-5 mb-3 text-muted">&copy; <a href="https://www.bloomsedge.com">BloomsEdge.com</p>
+      </div>
+    </div>
+  </div>
+
+<!--===============================================================================================-->
+  <script src="https://colorlib.com/etc/lf/Login_v15/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="https://colorlib.com/etc/lf/Login_v15/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+  <script src="https://colorlib.com/etc/lf/Login_v15/vendor/bootstrap/js/popper.js"></script>
+  <script src="https://colorlib.com/etc/lf/Login_v15/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="https://colorlib.com/etc/lf/Login_v15/vendor/daterangepicker/moment.min.js"></script>
+<!--===============================================================================================-->
+  <script src="https://colorlib.com/etc/lf/Login_v15/vendor/daterangepicker/moment.min.js"></script>
+  <script src="https://colorlib.com/etc/lf/Login_v15/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+  <script src="https://colorlib.com/etc/lf/Login_v15/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+  <script src="https://colorlib.com/etc/lf/Login_v15/js/main.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+  </script>
+</body>
 </html>

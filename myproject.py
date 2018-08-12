@@ -1,5 +1,5 @@
 #!usr/bin/env python3
-#import creds
+import creds
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -27,7 +27,7 @@ app.config['SECRET_KEY'] = 'secret'
 
 app_dash.scripts.config.serve_locally = False
 
-plotly.tools.set_credentials_file(username='Shecky914', api_key='Pe9tUa5YA1pSIeKXEkUe')
+plotly.tools.set_credentials_file(username=creds.username, api_key=creds.api_key)
 
 colorscale = cl.scales['9']['qual']['Paired']
 
@@ -64,9 +64,9 @@ app_dash.layout = html.Div([
                  },
                  ),
 
-        html.H4('Chose dates from the calandar to start off your chart analyzing'),
+        html.H4('Choose dates from the calandar to start off your chart analyzing'),
         html.H4('''Choose your "comparison stock"'''),
-        html.H4('Then chose another stock/stocks to compare with your first pick.  The stock prices will be normalized on a 0-1 scale so the graphs will be a lot easier to analyze'),
+        html.H4('Then choose another stock/stocks to compare with your first pick.  The stock prices will be normalized on a 0-1 scale so the graphs will be a lot easier to analyze'),
         html.H4('*You can always hover over lines to show the actual stock prices'),
         html.H4('*Click and drag over graph to zoom in; double click to zoom out'),
 

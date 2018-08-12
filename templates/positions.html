@@ -1,0 +1,10 @@
+{% extends "homepage.html" %}
+{% block main %}
+        <h5> Here Are your Open positions </h5>
+        <form action ="/positions" method = "get">
+        </form>
+        <p>{{ message }}</p>
+        <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+        <a class="nav-link" href="/homepage">Back to Dashboard</a>
+{% endblock main %}
